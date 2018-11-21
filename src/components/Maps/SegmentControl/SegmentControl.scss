@@ -1,0 +1,22 @@
+@import '../../../styles/colors';
+
+.map-segment-controller{
+  ul {
+    list-style: none;
+    text-decoration: none;
+    display: flex;
+    margin: 8px;
+    li {
+      padding: 20px 15px 10px 15px; 
+      margin: 0 10px;
+      font-size: 18px;
+      opacity: 0.6;
+      color: $color-white-rock;
+      transition: opacity 0.3s;
+      cursor: pointer;
+      &:hover {
+        opacity: 1;
+      }
+    }
+  }
+} 

@@ -70,7 +70,7 @@ class Maps extends Component {
 				</div>
 				<div className="middle-section">
           <div className="map">
-						{maps.world()}
+						{ maps.world() }
 					</div>
 				</div>
 				<div className="map-footer-container">

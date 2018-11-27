@@ -15,7 +15,7 @@ class Header extends Component {
                     <p className="subtitle-text">Brawl against anyone in the supported countries and win money. </p>
                 </div>
                 <div className="button-container">
-                    <button className="header-button">Get early access</button>
+                    <a href="#interest-section" className="header-button-link"><button className="header-button">Get early access</button></a>
                     <a href="#available-countries" className="header-button-link"><button className="header-button">Supported countries</button></a>
                 </div>
             </div>

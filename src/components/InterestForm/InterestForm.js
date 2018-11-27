@@ -145,9 +145,31 @@ class InterestForm extends Component {
     }
   }
 
+  checkConfirmPass(e) {
+    if (e.target.value === this.state.inputs.password) {
+      this.setState({
+        valid: {
+          ...this.state.valid,
+          [e.target.name]: "valid",
+        }
+      }, () => {
+        this.formIsValid()
+      })
+    } else if (this.state.valid.confirmpassword === "valid" && e.target.value !== this.state.inputs.password) {
+      this.setState({
+        valid: {
+          ...this.state.valid,
+          [e.target.name]: "",
+        }
+      }, () => {
+        this.formIsValid()
+      })
+    }
+  }
+
   render() {
     return(
-      <section className="interest-form-container">
+      <section id="interest-section" className="interest-form-container">
         <p className="interest-header">NOTICE OF INTEREST</p>
         {!this.state.registered ?
           <React.Fragment>
@@ -161,7 +183,7 @@ class InterestForm extends Component {
               <input className={"form-input " + ((this.state.valid.password === "valid") ? "valid": "") + ((this.state.valid.password === "invalid") ? "invalid": "")} id="password-input" type='password' name="password" placeholder="Password" onChange={this.onInputChange} onBlur={this.liveValidation} autoComplete="off"/>
             </div>
             <div className="input-container">
-              <input className={"form-input " + ((this.state.valid.confirmpassword === "valid") ? "valid": "") + ((this.state.valid.confirmpassword === "invalid") ? "invalid": "")} id="confirm-password-input" type='password' name="confirmpassword" placeholder="Confirm Password" onChange={this.onInputChange} onBlur={this.liveValidation} automplete="off"/>
+              <input className={"form-input " + ((this.state.valid.confirmpassword === "valid") ? "valid": "") + ((this.state.valid.confirmpassword === "invalid") ? "invalid": "")} id="confirm-password-input" type='password' name="confirmpassword" placeholder="Confirm Password" onChange={(e) => {this.onInputChange(e); this.checkConfirmPass(e);}} onBlur={this.liveValidation} automplete="off"/>
             </div>
             <div className="input-container">
               <button id="form-submit" className={(this.state.submitFormActive ? "active" : "")} onClick={this.state.submitFormActive ? this.onEmailSubmit : () => {}}>Send</button>

@@ -1,7 +1,9 @@
 @import './styles/_colors.scss';
+html {
+  background-color: $color-tuatara;
+}
 
 .App {
   text-align: center;
-  background-color: $color-kelp;
 }
 

@@ -85,14 +85,17 @@
             }
 
             .header-button {
-                height: 45px;
+   
                 width: 250px;
                 text-align: center;
                 margin-bottom: 20px;
+                font-family: 'Orbitron', sans-serif;
+                padding: 16px 10px 14px 10px;
                 border: 0;
                 font-size: 14px;
                 background-color: #2C821F;
                 box-shadow:inset 0px 0px 0px 2px #42AA3B;
+                transition: background-color 0.2s;
                 box-sizing: border-box;
                 color: #EDE4D7;
                 cursor: pointer;

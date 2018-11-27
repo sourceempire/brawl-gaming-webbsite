@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import firebase from 'firebase';
-import './InterestForm.scss'
+import ScrollableAnchor, { configureAnchors } from 'react-scrollable-anchor';
+import lottie from 'lottie-web'
+import './InterestForm.scss';
 require("firebase/functions");
 
 class InterestForm extends Component {
@@ -8,6 +10,8 @@ class InterestForm extends Component {
     super(props)
     this.state = {
       submitFormActive: false,
+      loading: false,
+      loadingDone: false,
       inputs: {
         fullname: "",
         email: "",
@@ -36,6 +40,25 @@ class InterestForm extends Component {
 
   componentDidMount() {
     this.initFirebase()
+    configureAnchors({offset: 0, scrollDuration: 1000})
+    lottie.loadAnimation({
+      container: document.getElementById('loading'),
+      renderer: "svg",
+      loop: true,
+      autoplay: true,
+      path: "/loading.json"
+    });
+    var done = 
+    lottie.loadAnimation({
+      container: document.getElementById('loadingDone'),
+      renderer: "svg",
+      loop: false,
+      autoplay: false,
+      path: "/done.json"
+    });
+    this.setState({
+      done: done,
+    })
   }
 
   initFirebase() {
@@ -44,6 +67,7 @@ class InterestForm extends Component {
       projectId: 'interest-form-brawl-gaming',
       databaseURL: "https://interest-form-brawl-gaming.firebaseio.com",
     });
+    
   }
 
   onInputChange(e) {
@@ -64,7 +88,12 @@ class InterestForm extends Component {
       confirmpassword: this.state.inputs.confirmpassword,
     }).then((res) => {
       console.log(res)
-      this.setState({registered: true})
+      this.setState({
+        registered: true,
+        loading: false,
+        loadingDone: true,
+      })
+      this.state.done.play()
     }).catch((err) => {
       console.log(err)
     }) 
@@ -146,7 +175,7 @@ class InterestForm extends Component {
   }
 
   checkConfirmPass(e) {
-    if (e.target.value === this.state.inputs.password) {
+    if (e.target.value === this.state.inputs.password && this.state.inputs.password !== "") {
       this.setState({
         valid: {
           ...this.state.valid,
@@ -155,7 +184,7 @@ class InterestForm extends Component {
       }, () => {
         this.formIsValid()
       })
-    } else if (this.state.valid.confirmpassword === "valid" && e.target.value !== this.state.inputs.password) {
+    } else if ((this.state.valid.confirmpassword === "valid" && e.target.value !== this.state.inputs.password) || this.state.inputs.password === "") {
       this.setState({
         valid: {
           ...this.state.valid,
@@ -169,46 +198,54 @@ class InterestForm extends Component {
 
   render() {
     return(
-      <section id="interest-section" className="interest-form-container">
-        <p className="interest-header">NOTICE OF INTEREST</p>
-        {!this.state.registered ?
-          <React.Fragment>
-            <div className="input-container">
-              <input className={"form-input " + ((this.state.valid.fullname === "valid") ? "valid": "") + ((this.state.valid.fullname === "invalid") ? "invalid": "")} id="full-name-input" type="text" name="fullname" placeholder="Full Name" onChange={this.onInputChange} onBlur={this.liveValidation} autoComplete="off"/>
+      <ScrollableAnchor id={"interest-section"} >
+        <section className="interest-form-container">
+          <p className="interest-header">NOTICE OF INTEREST</p>
+          <div id="loading" className={"loading " + (this.state.loading ? "active": "")} />
+          <div id="loadingDone" className={"loadingDone " + (this.state.loadingDone ? "active": "")} />
+          {!this.state.registered ?
+            <div className={"form-container " + (this.state.loading ? "inactive": "")}>
+              <div className="input-container">
+                <input className={"form-input " + ((this.state.valid.fullname === "valid") ? "valid": "") + ((this.state.valid.fullname === "invalid") ? "invalid": "")} id="full-name-input" type="text" name="fullname" placeholder="Full Name" onChange={this.onInputChange} onBlur={this.liveValidation} autoComplete="off"/>
+              </div>
+              <div className="input-container">
+                <input className={"form-input " + ((this.state.valid.email === "valid") ? "valid": "") + ((this.state.valid.email === "invalid") ? "invalid": "")} id="email-input" type='text' name="email" placeholder="E-mail" onChange={this.onInputChange} onBlur={this.liveValidation} autoComplete="off" />
+              </div>
+              <div className="input-container">
+                <input className={"form-input " + ((this.state.valid.password === "valid") ? "valid": "") + ((this.state.valid.password === "invalid") ? "invalid": "")} id="password-input" type='password' name="password" placeholder="Password" onChange={this.onInputChange} onBlur={this.liveValidation} autoComplete="off"/>
+              </div>
+              <div className="input-container">
+                <input className={"form-input " + ((this.state.valid.confirmpassword === "valid") ? "valid": "") + ((this.state.valid.confirmpassword === "invalid") ? "invalid": "")} id="confirm-password-input" type='password' name="confirmpassword" placeholder="Confirm Password" onChange={(e) => {this.onInputChange(e); this.checkConfirmPass(e);}} onBlur={this.liveValidation} automplete="off"/>
+              </div>
+              <div className="input-container">
+                <button id="form-submit" className={(this.state.submitFormActive ? "active" : "")} onClick={this.state.submitFormActive ? (e) => {this.onEmailSubmit(e); this.setState({loading: true})} : () => {}}>Send</button>
+              </div>
+              <div className="interest-text">Not interested anymore? <div className="remove-interest">Unsubscribe here</div></div>
             </div>
-            <div className="input-container">
-              <input className={"form-input " + ((this.state.valid.email === "valid") ? "valid": "") + ((this.state.valid.email === "invalid") ? "invalid": "")} id="email-input" type='text' name="email" placeholder="E-mail" onChange={this.onInputChange} onBlur={this.liveValidation} autoComplete="off" />
-            </div>
-            <div className="input-container">
-              <input className={"form-input " + ((this.state.valid.password === "valid") ? "valid": "") + ((this.state.valid.password === "invalid") ? "invalid": "")} id="password-input" type='password' name="password" placeholder="Password" onChange={this.onInputChange} onBlur={this.liveValidation} autoComplete="off"/>
-            </div>
-            <div className="input-container">
-              <input className={"form-input " + ((this.state.valid.confirmpassword === "valid") ? "valid": "") + ((this.state.valid.confirmpassword === "invalid") ? "invalid": "")} id="confirm-password-input" type='password' name="confirmpassword" placeholder="Confirm Password" onChange={(e) => {this.onInputChange(e); this.checkConfirmPass(e);}} onBlur={this.liveValidation} automplete="off"/>
-            </div>
-            <div className="input-container">
-              <button id="form-submit" className={(this.state.submitFormActive ? "active" : "")} onClick={this.state.submitFormActive ? this.onEmailSubmit : () => {}}>Send</button>
-            </div>
-            <div className="not-interested">Not interested anymore? <div className="remove-interest">Remove your email here</div></div>
-          </React.Fragment>
-          :  
-          <React.Fragment>
-            <p>Thank you for showing interest! As soon as we launch something we will contact you.</p>
-            <button onClick={() => {
-              this.setState({
-                registered: false,
-                valid: {
-                  fullname: "",
-                  email: "",
-                  password: "",
-                  confirmpassword: "",
-                },
-                submitFormActive: false,
-              })
-              }
-            }>Register another</button>
-          </React.Fragment>
-        }
-      </section>
+            :  
+            <React.Fragment>
+              <div className="done-loading-container">
+                <p className="interest-text">Thank you for showing interest! As soon as we launch something we will contact you.</p>
+                <button className="register-new-button" onClick={() => {
+                  this.state.done.stop()
+                  this.setState({
+                    registered: false,
+                    valid: {
+                      fullname: "",
+                      email: "",
+                      password: "",
+                      confirmpassword: "",
+                    },
+                    loadingDone: false,
+                    submitFormActive: false,
+                  })
+                  }
+                }>Register another</button>
+              </div>
+            </React.Fragment>
+          }
+        </section>
+      </ScrollableAnchor>
     )
   }
 }

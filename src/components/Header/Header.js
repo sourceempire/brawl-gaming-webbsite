@@ -2,9 +2,8 @@ import React, { Component } from 'react';
 import './Header.scss';
 
 class Header extends Component {
-
+    
     render() {
-
       return (
         <div className="header-container">
             <div className="div-content">
@@ -16,7 +15,7 @@ class Header extends Component {
                 </div>
                 <div className="button-container">
                     <a href="#interest-section" className="header-button-link"><button className="header-button">Get early access</button></a>
-                    <a href="#available-countries" className="header-button-link"><button className="header-button">Supported countries</button></a>
+                    <a href="#available-countries-anchor" className="header-button-link"><button className="header-button">Supported countries</button></a>
                 </div>
             </div>
         </div>

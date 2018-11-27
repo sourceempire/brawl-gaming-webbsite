@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
+import ScrollableAnchor from 'react-scrollable-anchor';
 import Flag from './Flag/Flag';
 import * as maps from './svg-maps';
+
 
 import '../../styles/_colors.scss'
 import './Maps.scss';
@@ -63,29 +65,31 @@ class Maps extends Component {
 
 	render() {
 		return (
-			<section id="available-countries">
-				<div className="map-header-container">
-					<p className="map-header">We Offer Our Service In These Countries</p>
-          <div className="line" />
-				</div>
-				<div className="middle-section">
-          <div className="map">
-						{ maps.world() }
-					</div>
-				</div>
-				<div className="map-footer-container">
-          <div className="flags-container">
-            <p className="flags-header">Available in {this.state.availableCountries.length} countries world wide</p>
-            <p className="flags-subheader">We expand internationally at the same rate as Stripe does, because we use their services for money transactions. Visit <a className="text-link" href="https://www.stripe.com/global">Stripe</a> for more information if you can't find your country in the list below.</p>
-            <div className="line-container"><div className="line" /></div>
-            <div className="flags">
-              { this.state.flagsData.map((element, index) => {
-                return <Flag key={index} code={element.code} name={element.name}/>
-              })}
+      <ScrollableAnchor id="available-countries-anchor">
+        <section id="available-countries">
+          <div className="map-header-container">
+            <p className="map-header">We Offer Our Service In These Countries</p>
+            <div className="line" />
+          </div>
+          <div className="middle-section">
+            <div className="map">
+              { maps.world() }
             </div>
           </div>
-        </div>
-			</section>
+          <div className="map-footer-container">
+            <div className="flags-container">
+              <p className="flags-header">Available in {this.state.availableCountries.length} countries world wide</p>
+              <p className="flags-subheader">We expand internationally at the same rate as Stripe does, because we use their services for money transactions. Visit <a className="text-link" href="https://www.stripe.com/global">Stripe</a> for more information if you can't find your country in the list below.</p>
+              <div className="line-container"><div className="line" /></div>
+              <div className="flags">
+                { this.state.flagsData.map((element, index) => {
+                  return <Flag key={index} code={element.code} name={element.name}/>
+                })}
+              </div>
+            </div>
+          </div>
+        </section>
+      </ScrollableAnchor>
 		);
 	}
 }

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Header from './components/Header/Header';
 import Maps from './components/Maps/Maps';
 import AvailableGames from './components/AvailableGames/AvailableGames';
-import InterestForm from './components/InterestForm/InterestForm'
+import InterestForm from './components/InterestForm/InterestForm';
 import './App.scss';
 require('dotenv').config();
 

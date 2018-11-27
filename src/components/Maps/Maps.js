@@ -63,7 +63,7 @@ class Maps extends Component {
 
 	render() {
 		return (
-			<section className="available-countries">
+			<section id="available-countries">
 				<div className="map-header-container">
 					<p className="map-header">We Offer Our Service In These Countries</p>
           <div className="line" />

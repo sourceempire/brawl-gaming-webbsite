@@ -1,0 +1,122 @@
+@import '../../styles/_colors.scss';
+
+.header-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 13vh 10% 0px 10%;
+    box-sizing: border-box;
+    height: 87vh;
+    min-height: 700px;
+    box-sizing: border-box;
+    width: 100vw;
+    background-color: $color-tuatara;
+
+    @media only screen and (max-width: 811px) {
+        padding: 13vh 5% 0px 5%;
+    }
+
+    @media only screen and (max-width: 415px) {
+        min-height: 500px;
+    }
+
+    .div-content {
+        display: flex;
+        justify-content: center;
+        flex-flow: row wrap;
+        width: 700px;
+        min-height: 20px;
+
+        .header-title {
+            width: 100%;
+            font-family: 'Orbitron', sans-serif;
+            color: #EDE4D7;
+            font-size: 35px;
+
+            @media only screen and (max-width: 721px) {
+                font-size: 30px;
+            }
+
+            @media only screen and (max-width: 618px) {
+                font-size: 28px;
+            }
+
+            .title-text {
+                margin: 0 auto;
+            }
+        }
+
+        .header-subtitle {
+            width: 100%;
+            color: #EDE4D7;
+            font-size: 18px;
+
+            @media only screen and (max-width: 721px) {
+                width: 80%;
+            }
+
+            @media only screen and (max-width: 576px) {
+                width: 70%;
+            }
+
+            .subtitle-text {
+                margin: 10px 0px;
+            }
+        }
+
+        .button-container {
+            display: flex;
+            justify-content: center;
+            flex-flow: row wrap;
+            min-height: 40px;
+            width: 250px;
+            margin: calc(8vw / 14) 0px;
+
+            @media only screen and (max-width: 721px) {
+                width: 80%;
+            }
+
+            @media only screen and (max-width: 576px) {
+                width: 70%;
+            }
+
+            @media only screen and (max-width: 490px) {
+                width: 100%;
+            }
+
+            .header-button {
+                height: 45px;
+                width: 250px;
+                text-align: center;
+                margin-bottom: 20px;
+                border: 0;
+                font-size: 14px;
+                background-color: #2C821F;
+                box-shadow:inset 0px 0px 0px 2px  #42AA3B;
+                box-sizing: border-box;
+                color: #EDE4D7;
+                cursor: pointer;
+
+                @media only screen and (max-width: 721px) {
+                    width: 100%;
+                }
+
+                &:hover {
+                    background-color: #42AA3B;
+                }
+
+                &:focus {
+                    outline: none;
+                }
+
+                &:active {
+                    background-color: $color-forest-green;
+                }
+            }
+
+            .header-button-link {
+                width: 100%;
+            }
+        }
+    }
+}

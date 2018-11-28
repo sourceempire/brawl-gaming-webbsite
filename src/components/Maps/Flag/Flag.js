@@ -8,7 +8,7 @@ export default function Flag(props) {
         <React.Fragment>
             <div className="country-display-container">
                 <div className="flag-container">
-                    <img id='myImage' src={"/flags/"+countryCode+".png"} alt={"flag of " + props.name} draggable='false'/>
+                    <img id='myImage' src={countryCode+".png"} alt={"flag of " + props.name} draggable='false'/>
                 </div>
                 <p className="country-name">{props.name}</p>
             </div>

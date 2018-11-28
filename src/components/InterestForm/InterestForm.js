@@ -46,7 +46,7 @@ class InterestForm extends Component {
       renderer: "svg",
       loop: true,
       autoplay: true,
-      path: "/loading.json"
+      path: "loading.json"
     });
     var done = 
     lottie.loadAnimation({
@@ -54,7 +54,7 @@ class InterestForm extends Component {
       renderer: "svg",
       loop: false,
       autoplay: false,
-      path: "/done.json"
+      path: "done.json"
     });
     this.setState({
       done: done,
@@ -64,8 +64,8 @@ class InterestForm extends Component {
   initFirebase() {
     firebase.initializeApp({
       apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
-      projectId: 'interest-form-brawl-gaming',
-      databaseURL: "https://interest-form-brawl-gaming.firebaseio.com",
+      projectId: process.env.REACT_APP_FIREBASE_PROJECT_ID,
+      databaseURL: process.env.REACT_APP_FIREBASE_DATABASE_URL,
     });
     
   }

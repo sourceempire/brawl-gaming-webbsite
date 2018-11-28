@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/brawl-gaming-webbsite/precache-manifest.dda1f13331ed667db43d4a6573bbbab3.js"
+  "/brawl-gaming-webbsite/precache-manifest.e8f1bb4291bad4a4720957f7ad19ee8d.js"
 );
 
 workbox.clientsClaim();

@@ -4,19 +4,19 @@ self.__precacheManifest = [
     "url": "/brawl-gaming-webbsite/static/js/runtime~main.b543a53b.js"
   },
   {
-    "revision": "0648a40b49cd63de09c0",
-    "url": "/brawl-gaming-webbsite/static/js/main.0648a40b.chunk.js"
+    "revision": "9c85c42a3ee014ad4769",
+    "url": "/brawl-gaming-webbsite/static/js/main.9c85c42a.chunk.js"
   },
   {
     "revision": "2532d836e3bdfa45d028",
     "url": "/brawl-gaming-webbsite/static/js/1.2532d836.chunk.js"
   },
   {
-    "revision": "0648a40b49cd63de09c0",
+    "revision": "9c85c42a3ee014ad4769",
     "url": "/brawl-gaming-webbsite/static/css/main.9b208f9f.chunk.css"
   },
   {
-    "revision": "7ddd854910cfd7bdb86dd787a6d9e5e5",
+    "revision": "ad8a8e860a6f6d94a2cc88faf40914c5",
     "url": "/brawl-gaming-webbsite/index.html"
   }
 ];

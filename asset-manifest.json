@@ -1,13 +1,13 @@
 {
-  "main.css": "/brawlgaming/static/css/main.9b208f9f.chunk.css",
-  "main.js": "/brawlgaming/static/js/main.7be6de1f.chunk.js",
-  "main.js.map": "/brawlgaming/static/js/main.7be6de1f.chunk.js.map",
-  "static/js/1.71ad8ac0.chunk.js": "/brawlgaming/static/js/1.71ad8ac0.chunk.js",
-  "static/js/1.71ad8ac0.chunk.js.map": "/brawlgaming/static/js/1.71ad8ac0.chunk.js.map",
-  "runtime~main.js": "/brawlgaming/static/js/runtime~main.6a2b9441.js",
-  "runtime~main.js.map": "/brawlgaming/static/js/runtime~main.6a2b9441.js.map",
-  "static/css/main.9b208f9f.chunk.css.map": "/brawlgaming/static/css/main.9b208f9f.chunk.css.map",
-  "index.html": "/brawlgaming/index.html",
-  "precache-manifest.f320ce34127e6a3b39c149bbb7a85b39.js": "/brawlgaming/precache-manifest.f320ce34127e6a3b39c149bbb7a85b39.js",
-  "service-worker.js": "/brawlgaming/service-worker.js"
+  "main.css": "/brawl-gaming-webbsite/static/css/main.9b208f9f.chunk.css",
+  "main.js": "/brawl-gaming-webbsite/static/js/main.0648a40b.chunk.js",
+  "main.js.map": "/brawl-gaming-webbsite/static/js/main.0648a40b.chunk.js.map",
+  "static/js/1.2532d836.chunk.js": "/brawl-gaming-webbsite/static/js/1.2532d836.chunk.js",
+  "static/js/1.2532d836.chunk.js.map": "/brawl-gaming-webbsite/static/js/1.2532d836.chunk.js.map",
+  "runtime~main.js": "/brawl-gaming-webbsite/static/js/runtime~main.b543a53b.js",
+  "runtime~main.js.map": "/brawl-gaming-webbsite/static/js/runtime~main.b543a53b.js.map",
+  "static/css/main.9b208f9f.chunk.css.map": "/brawl-gaming-webbsite/static/css/main.9b208f9f.chunk.css.map",
+  "index.html": "/brawl-gaming-webbsite/index.html",
+  "precache-manifest.dda1f13331ed667db43d4a6573bbbab3.js": "/brawl-gaming-webbsite/precache-manifest.dda1f13331ed667db43d4a6573bbbab3.js",
+  "service-worker.js": "/brawl-gaming-webbsite/service-worker.js"
 }

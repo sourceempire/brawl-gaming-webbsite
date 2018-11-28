@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/brawlgaming/precache-manifest.f320ce34127e6a3b39c149bbb7a85b39.js"
+  "/brawl-gaming-webbsite/precache-manifest.dda1f13331ed667db43d4a6573bbbab3.js"
 );
 
 workbox.clientsClaim();
@@ -28,7 +28,7 @@ self.__precacheManifest = [].concat(self.__precacheManifest || []);
 workbox.precaching.suppressWarnings();
 workbox.precaching.precacheAndRoute(self.__precacheManifest, {});
 
-workbox.routing.registerNavigationRoute("/brawlgaming/index.html", {
+workbox.routing.registerNavigationRoute("/brawl-gaming-webbsite/index.html", {
   
   blacklist: [/^\/_/,/\/[^\/]+\.[^\/]+$/],
 });

@@ -2,7 +2,6 @@ import React from 'react';
 import './GameCover.scss';
 
 function GameCover (props) {
-    console.log(props.isList)
     return (
         <div className="gameCover-container" style={props.isList ? {backgroundImage: 'url('+props.gameCover.coverImageUrl+')'} : {backgroundImage: 'url('+props.gameCover.coverImageUrlSmall+')'}}>
             <div className="gameCover-overlay" />

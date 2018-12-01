@@ -19,7 +19,7 @@
       display: block;
     }
   }
-  .loadingDone {
+  .loadingDone, .error {
     width: 150px;
     height: 150px;
     display: none;
@@ -130,4 +130,10 @@
       transition: background-color 0;
     }
   } 
+}
+
+#errortext {
+  color: $color-ku-crimson;
+  width: 100%;
+  margin: 0 0 5px 0;
 }

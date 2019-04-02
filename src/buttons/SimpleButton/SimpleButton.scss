@@ -1,0 +1,20 @@
+@import 'src/styles/colors';
+
+.simple-button {
+height: 45px;
+width: 100%;
+position: relative;
+display: flex;
+justify-content: center;
+align-items: center;
+
+&.green {
+background-image: $color-button;
+}
+
+p {
+position: relative;
+z-index: 1;
+margin-top: 3px;
+}
+}

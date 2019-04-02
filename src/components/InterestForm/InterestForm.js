@@ -117,6 +117,7 @@ class InterestForm extends Component {
   formIsValid(){
     const inputNames = ['fullname', 'email', 'password', 'confirmpassword']
     var inputStatus = [];
+
     inputNames.forEach(element => {
       inputStatus.push(this.state.valid[element])
     });
@@ -128,6 +129,7 @@ class InterestForm extends Component {
   liveValidation(e) {
     const inputType = e.target.name
     const inputValue = e.target.value
+    
     if (inputType !== "confirmpassword") {
       if (inputValue === "") {
         this.setState({
@@ -347,16 +349,16 @@ class InterestForm extends Component {
             { this.state.registerFormShown ?
               <React.Fragment>
                 <div className="input-container">
-                  <input className={"form-input " + ((this.state.valid.fullname === "valid") ? "valid": "") + ((this.state.valid.fullname === "invalid") ? "invalid": "")} id="full-name-input" type="text" name="fullname" placeholder="Full Name" onChange={this.onInputChange} onBlur={this.liveValidation} autoComplete="off" value={this.state.inputs.fullname}/>
+                  <input className={"form-input " + ((this.state.valid.fullname === "valid") ? "valid": "") + ((this.state.valid.fullname === "invalid") ? "invalid": "")} id="full-name-input" type="text" name="fullname" placeholder="Full Name" onChange={this.onInputChange} onBlur={this.liveValidation} autoComplete="off" value={this.state.inputs.fullname}></input>
                 </div>
                 <div className="input-container">
-                  <input className={"form-input " + ((this.state.valid.email === "valid") ? "valid": "") + ((this.state.valid.email === "invalid") ? "invalid": "")} id="email-input" type='text' name="email" placeholder="E-mail" onChange={this.onInputChange} onBlur={this.liveValidation} autoComplete="off" value={this.state.inputs.email}/>
+                  <input className={"form-input " + ((this.state.valid.email === "valid") ? "valid": "") + ((this.state.valid.email === "invalid") ? "invalid": "")} id="email-input" type='text' name="email" placeholder="E-mail" onChange={this.onInputChange} onBlur={this.liveValidation} autoComplete="off" value={this.state.inputs.email}></input>
                 </div>
                 <div className="input-container">
-                  <input className={"form-input " + ((this.state.valid.password === "valid") ? "valid": "") + ((this.state.valid.password === "invalid") ? "invalid": "")} id="password-input" type='password' name="password" placeholder="Password" onChange={this.onInputChange} onBlur={this.liveValidation} autoComplete="off" value={this.state.inputs.password}/>
+                  <input className={"form-input " + ((this.state.valid.password === "valid") ? "valid": "") + ((this.state.valid.password === "invalid") ? "invalid": "")} id="password-input" type='password' name="password" placeholder="Password" onChange={this.onInputChange} onBlur={this.liveValidation} autoComplete="off" value={this.state.inputs.password}></input>
                 </div>
                 <div className="input-container">
-                  <input className={"form-input " + ((this.state.valid.confirmpassword === "valid") ? "valid": "") + ((this.state.valid.confirmpassword === "invalid") ? "invalid": "")} id="confirm-password-input" type='password' name="confirmpassword" placeholder="Confirm Password" onChange={(e) => {this.onInputChange(e); this.checkConfirmPass(e);}} onBlur={this.liveValidation} automplete="off" value={this.state.inputs.confirmpassword}/>
+                  <input className={"form-input " + ((this.state.valid.confirmpassword === "valid") ? "valid": "") + ((this.state.valid.confirmpassword === "invalid") ? "invalid": "")} id="confirm-password-input" type='password' name="confirmpassword" placeholder="Confirm Password" onChange={(e) => {this.onInputChange(e); this.checkConfirmPass(e);}} onBlur={this.liveValidation} automplete="off" value={this.state.inputs.confirmpassword}></input>
                 </div>
                 <div className="input-container">
                   <button id="form-submit" className={(this.state.submitFormActive ? "active" : "")} onClick={this.state.submitFormActive ? (e) => {this.onEmailSubmit(e); this.setState({loading: true})} : () => {}}>Send</button>

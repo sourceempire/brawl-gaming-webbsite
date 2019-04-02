@@ -9,11 +9,11 @@ class AvailableGames extends Component {
     this.state = {
       gameCovers: [
         {gameName: "Counter Strike: Global Offensive", coverImageUrl: "./csgo.jpg", coverImageUrlSmall: "./csgo-small.jpg", playersOnline: "798", gameLogoUrl: "./csgo-logo.png"},
-        {gameName: "Counter Strike: Global Offensive", coverImageUrl: "./fortnite.jpg", coverImageUrlSmall: "./fortnite-small.jpg", playersOnline: "798", gameLogoUrl: "./fortnite-logo.png"},
-        {gameName: "Counter Strike: Global Offensive", coverImageUrl: "./fifa.jpg", coverImageUrlSmall: "./fifa-small.jpg", playersOnline: "798", gameLogoUrl: "./fifa-logo.png"},
-        {gameName: "Counter Strike: Global Offensive", coverImageUrl: "./rocketleague.jpg", coverImageUrlSmall: "./rocketleague-small.jpg", playersOnline: "798", gameLogoUrl: "./rocketleague-logo.png"},
-        {gameName: "Counter Strike: Global Offensive", coverImageUrl: "./overwatch.jpg", coverImageUrlSmall: "./overwatch-small.jpg", playersOnline: "798", gameLogoUrl: "./overwatch-logo.png"},
-        {gameName: "Counter Strike: Global Offensive", coverImageUrl: "./leagueoflegends.jpg", coverImageUrlSmall: "./leagueoflegends-small.jpg", playersOnline: "798", gameLogoUrl: "./leagueoflegends-logo.png"}
+        //{gameName: "Counter Strike: Global Offensive", coverImageUrl: "./fortnite.jpg", coverImageUrlSmall: "./fortnite-small.jpg", playersOnline: "798", gameLogoUrl: "./fortnite-logo.png"},
+        //{gameName: "Counter Strike: Global Offensive", coverImageUrl: "./fifa.jpg", coverImageUrlSmall: "./fifa-small.jpg", playersOnline: "798", gameLogoUrl: "./fifa-logo.png"},
+        //{gameName: "Counter Strike: Global Offensive", coverImageUrl: "./rocketleague.jpg", coverImageUrlSmall: "./rocketleague-small.jpg", playersOnline: "798", gameLogoUrl: "./rocketleague-logo.png"},
+        //{gameName: "Counter Strike: Global Offensive", coverImageUrl: "./overwatch.jpg", coverImageUrlSmall: "./overwatch-small.jpg", playersOnline: "798", gameLogoUrl: "./overwatch-logo.png"},
+        //{gameName: "Counter Strike: Global Offensive", coverImageUrl: "./leagueoflegends.jpg", coverImageUrlSmall: "./leagueoflegends-small.jpg", playersOnline: "798", gameLogoUrl: "./leagueoflegends-logo.png"}
       ],
       isList: ""
     }

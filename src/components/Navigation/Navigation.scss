@@ -1,0 +1,68 @@
+@import 'src/styles/colors';
+
+.navigation-container{
+    z-index: 10;
+    position: relative;
+    height: 75px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    background-image: $color-header;
+    border-bottom: 1px solid $color-border;
+    box-sizing: border-box;
+    
+    .navigation-logo-container{
+        width: 0%;
+        //background-color: blue;
+        .navigation-logo{
+
+        }
+    }
+    .navigation-links{
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        //height: 100%;
+        //text-align: right;
+        padding: 0px 20px 0px 10px;
+
+        .navigation-item-wrapper .navigation-item{
+            list-style: none;
+            display: inline-block;
+
+            .is-active {
+                .navbar-text{
+                    text-shadow: 0 0 10px rgba(127, 240, 113, 0.7);
+                    opacity: 1;
+                    color: $color-active;    
+                }
+                
+              }
+
+            .navbar-text{
+                font-size: 25px;
+                padding-bottom: 3px;
+                font-family: 'Orbitron', sans-serif;
+                color: white;
+                opacity: 0.4;
+                //display: inline-block;
+                letter-spacing: 1px;
+                padding: 0 15px;
+
+                
+            
+                /*cursor: pointer;
+                &:active {
+                  transform: scale(1.1); //translate(0, 1.3px);
+                }
+                &:hover {
+                  transition: opacity 0.3s;
+                  opacity: 1;
+                }*/
+                
+
+            }
+        }
+    }
+}

@@ -1,20 +1,25 @@
 import React, { Component } from 'react';
-import Header from './components/Header/Header';
-import Maps from './components/Maps/Maps';
-import AvailableGames from './components/AvailableGames/AvailableGames';
-import InterestForm from './components/InterestForm/InterestForm';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
+
+import Home from './components/Home/Home'
+import Registration from './components/Registration/Registration'
+import Navigation from './components/Navigation/Navigation'
+
 import './App.scss';
-require('dotenv').config();
+import './styles/reset.scss';
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <Header />
-        <AvailableGames />
-        <Maps />
-        <InterestForm />
-      </div>
+      
+      <BrowserRouter>
+        <div className="app">
+          <Switch>
+            <Route path='/' component={Home} exact/>
+            <Route path='/registration' component={Registration} exact/>
+          </Switch>
+        </div>
+      </BrowserRouter>
     );
   }
 }

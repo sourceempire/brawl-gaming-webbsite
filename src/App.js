@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import { BrowserRouter, Route, Switch, HashRouter } from 'react-router-dom';
 
 import Home from './components/Home/Home'
 import Registration from './components/Registration/Registration'
@@ -11,15 +11,15 @@ import './styles/reset.scss';
 class App extends Component {
   render() {
     return (
-      
-      <BrowserRouter>
-        <div className="app">
-          <Switch>
-            <Route path='/' component={Home} exact/>
-            <Route path='/registration' component={Registration} exact/>
-          </Switch>
-        </div>
-      </BrowserRouter>
+        <BrowserRouter basename={process.env.PUBLIC_URL}>
+          <div className="app">
+            <Switch>
+              <Route path='/' component={Home} exact/>
+              <Route path='/registration' component={Registration} exact/>
+              <Route component={() => (<div>404 Not found </div>)} />
+            </Switch>
+          </div>
+        </BrowserRouter>
     );
   }
 }

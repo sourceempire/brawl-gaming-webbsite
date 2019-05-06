@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import firebase from 'firebase';
+//import firebase from 'firebase';
 import ScrollableAnchor, { configureAnchors } from 'react-scrollable-anchor';
 import lottie from 'lottie-web'
 import './InterestForm.scss';
-require("firebase/functions");
+//require("firebase/functions");
 
 class InterestForm extends Component {
   constructor(props) {
@@ -76,11 +76,13 @@ class InterestForm extends Component {
   }
 
   initFirebase() {
+    /*
     firebase.initializeApp({
       apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
       projectId: process.env.REACT_APP_FIREBASE_PROJECT_ID,
       databaseURL: process.env.REACT_APP_FIREBASE_DATABASE_URL,
     });
+    */
     
   }
 
@@ -94,6 +96,7 @@ class InterestForm extends Component {
   }
 
   onEmailSubmit() {
+    /*
     var addInterestedUser = firebase.functions().httpsCallable('addInterestedUser');
     addInterestedUser({
       fullname: this.state.inputs.fullname,
@@ -112,6 +115,7 @@ class InterestForm extends Component {
     }).catch((err) => {
       console.log(err)
     }) 
+    */
   }
 
   formIsValid(){
@@ -300,6 +304,7 @@ class InterestForm extends Component {
   }
 
   onUnsubscribe() {
+    /*
     var removeInterestedUser = firebase.functions().httpsCallable('removeInterestedUser');
     removeInterestedUser({
       email: this.state.inputs.unsubemail,
@@ -335,6 +340,7 @@ class InterestForm extends Component {
     }).catch((err) => {
       console.log(err)
     }) 
+    */
   }
 
   render() {

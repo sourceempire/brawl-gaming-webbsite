@@ -3,18 +3,13 @@
 .header-container {
     display: flex;
     justify-content: center;
-    align-items: center;
-    padding: 13vh 10% 0px 10%;
-    box-sizing: border-box;
     height: 60vh;
     min-height: 500px;
     box-sizing: border-box;
     width: 100vw;
-    background-color: $color-tuatara;
+    background-image: url('/brawl-keyboard-background-light.jpg');
+    background-size: cover;
 
-    @media only screen and (max-width: 811px) {
-        padding: 13vh 5% 0px 5%;
-    }
 
     @media only screen and (max-width: 415px) {
         min-height: 500px;
@@ -26,6 +21,21 @@
         flex-flow: row wrap;
         width: 700px;
         min-height: 20px;
+
+        .icon {
+          height: 270px;
+          margin-top: 23px;
+
+          @media only screen and (max-width: 811px) {
+            margin-top: 43px;
+            height: 210px;
+          }
+        }
+
+        .logo {
+          max-width: 80%;
+          margin: 0 auto auto auto;
+        }
 
         .header-title {
             width: 100%;
@@ -85,7 +95,7 @@
             }
 
             .header-button {
-   
+
                 width: 250px;
                 text-align: center;
                 margin-bottom: 20px;

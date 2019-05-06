@@ -1,0 +1,30 @@
+@import '../../styles/_colors.scss';
+
+.app-preview {
+  background: #0a0802;
+  color: #EDE4D7;
+  font-family: 'Open sans', sans-serif;
+
+
+  .screenshot {
+    display: block;
+    max-width: 600px;
+    width: 80%;
+    margin: auto;
+  }
+
+  .title-text {
+    text-align: center;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 35px;
+    padding: 40px;
+  }
+
+  .description {
+    font-size: 20px;
+    padding: 0 50px 20px 50px;
+    max-width: 600px;
+    text-align: center;
+    margin: auto;
+  }
+}

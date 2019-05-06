@@ -9,6 +9,7 @@ class AvailableGames extends Component {
     this.state = {
       gameCovers: [
         {gameName: "Counter Strike: Global Offensive", coverImageUrl: "./csgo.jpg", coverImageUrlSmall: "./csgo-small.jpg", playersOnline: "798", gameLogoUrl: "./csgo-logo.png"},
+        {gameName: "Your favorite game", coverImageUrl: "./your-favorite-game.png", coverImageUrlSmall: "./your-favorite-game-small.png", playersOnline: "0", gameLogoUrl: "./none.png"},
         //{gameName: "Counter Strike: Global Offensive", coverImageUrl: "./fortnite.jpg", coverImageUrlSmall: "./fortnite-small.jpg", playersOnline: "798", gameLogoUrl: "./fortnite-logo.png"},
         //{gameName: "Counter Strike: Global Offensive", coverImageUrl: "./fifa.jpg", coverImageUrlSmall: "./fifa-small.jpg", playersOnline: "798", gameLogoUrl: "./fifa-logo.png"},
         //{gameName: "Counter Strike: Global Offensive", coverImageUrl: "./rocketleague.jpg", coverImageUrlSmall: "./rocketleague-small.jpg", playersOnline: "798", gameLogoUrl: "./rocketleague-logo.png"},
@@ -56,15 +57,14 @@ class AvailableGames extends Component {
             {this.state.gameCovers.map((gameCover, index) => {
               return <GameCover key={index} gameCover={gameCover} isList={this.state.isList}/>
             })}
-          <div className="button-container">
+          {/*<div className="button-container">
             <button className="button">See all games</button>
-          </div>
+          </div>*/}
         </div>
       </div>
     </div>
     );
   }
 }
-  
+
 export default AvailableGames;
-  

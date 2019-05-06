@@ -2,26 +2,21 @@ import React, { Component } from 'react';
 import './Header.scss';
 
 class Header extends Component {
-    
+
     render() {
       return (
         <div className="header-container">
             <div className="div-content">
+                <img className="icon" src="/brawl-logo-keyboard.png" />
+                <img className="logo" src="/brawl-gaming-logo-colored.png" />
                 <div className="header-title">
-                    <p className="title-text">Increase your gaming experience</p>
                 </div>
                 <div className="header-subtitle">
-                    <p className="subtitle-text">Brawl against anyone in the supported countries and win money. </p>
-                </div>
-                <div className="button-container">
-                    <a href="#interest-section" className="header-button-link"><button className="header-button">Get early access</button></a>
-                    <a href="#available-countries-anchor" className="header-button-link"><button className="header-button">Supported countries</button></a>
                 </div>
             </div>
         </div>
       );
     }
   }
-  
+
   export default Header;
-  

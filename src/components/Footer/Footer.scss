@@ -1,0 +1,30 @@
+
+.footer {
+  background: #0a0802;
+  color: #EDE4D7;
+  font-family: 'Open sans', sans-serif;
+  padding-bottom: 50px;
+  text-align: center;
+
+  .title {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 30px;
+    text-align: center;
+    padding: 20px
+  }
+
+  .c {
+    font-size: 20px;
+    display: inline-block;
+  }
+
+  .inter {
+    display: none;
+  }
+
+  .copyright {
+    font-size: 16px;
+    padding: 20px;
+    opacity: .7;
+  }
+}

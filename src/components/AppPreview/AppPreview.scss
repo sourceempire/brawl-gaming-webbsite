@@ -5,12 +5,13 @@
   color: #EDE4D7;
   font-family: 'Open sans', sans-serif;
 
+  .screenshots {
+    text-align: center;
+  }
 
   .screenshot {
-    display: block;
-    max-width: 600px;
+    max-width: 664px;
     width: 80%;
-    margin: auto;
   }
 
   .title-text {

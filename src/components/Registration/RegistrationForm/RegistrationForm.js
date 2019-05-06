@@ -158,18 +158,19 @@ class RegistrationForm extends Component {
   }
 
   setAndgetAlphaKey = (url) => {
-    const alphakeyfromURL = new URL(url).searchParams.get("alpha-key");
-    if(alphakeyfromURL !== null) {
+    const alphaKeyMatch = url.match(/#?alpha-key=([0-9a-fA-F]{8}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{12})/i);
+    if(alphaKeyMatch !== null) {
+      const alphaKeyInvite = alphaKeyMatch[1];
     this.setState({
       inputs: {
         ...this.state.inputs,
         alphakey: {
           ...this.state.inputs.alphakey,
-          value: alphakeyfromURL,
+          value: alphaKeyInvite,
           }
       }
     })
-    }else if (alphakeyfromURL === null){
+    }else {
       this.setState({
         inputs: {
           ...this.state.inputs,

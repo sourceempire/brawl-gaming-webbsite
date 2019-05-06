@@ -11,7 +11,7 @@ import './styles/reset.scss';
 class App extends Component {
   render() {
     return (
-        <BrowserRouter basename={process.env.PUBLIC_URL}>
+        <HashRouter>
           <div className="app">
             <Switch>
               <Route path='/' component={Home} exact/>
@@ -19,7 +19,7 @@ class App extends Component {
               <Route component={() => (<div>404 Not found </div>)} />
             </Switch>
           </div>
-        </BrowserRouter>
+        </HashRouter>
     );
   }
 }
